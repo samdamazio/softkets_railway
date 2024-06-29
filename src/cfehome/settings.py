@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-fg)#tp4kt77h(lci=3i$ssd2^vr(3sh5lau=x#1#(svfzf!9v&
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ".railway.app" # https://saas.prod.railway.app
+    ".railway.app", # https://saas.prod.railway.app
+    ".vercel.app" # https://saas.prod.vercel.app obs:django dif version
 ]
 if DEBUG:
     ALLOWED_HOSTS += [
