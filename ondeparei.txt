@@ -1,1 +1,1 @@
-Configure Django Static Files in Dev
+Download URL to Local File Helper Function
