@@ -1,1 +1,2 @@
-Using WhiteNoise to Serve Django Static Files 3:01:20
+Django Admin
+User + User Passwords
