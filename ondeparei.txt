@@ -1,1 +1,1 @@
-Missing Args with Container Build in Railway
+Using WhiteNoise to Serve Django Static Files 3:01:20
