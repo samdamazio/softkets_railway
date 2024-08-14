@@ -1,2 +1,2 @@
-Register Users the Hard Way (3:52:47 / 11:50:32)
+Configure Django AllAuth (4:03:21 / 11:50:32)
 https://youtu.be/WbNNESIxJnY?si=H7DymuiZsajjbDd6
