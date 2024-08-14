@@ -1,2 +1,6 @@
-Configure Django AllAuth (4:03:21 / 11:50:32)
+Navbar Links for Auth (4:17:27 / 11:50:32)
 https://youtu.be/WbNNESIxJnY?si=H7DymuiZsajjbDd6
+
+
+Better UI for Django AllAuth (4:17:27 / 11:50:32)
+Obs: a forma de modificar o template basico do AllAuth-UI mudou pois nas versoes mais novas o nome dos arquivos sao diferentes, e existe um app a mais como dependencia
