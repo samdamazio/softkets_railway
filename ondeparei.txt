@@ -1,6 +1,7 @@
-Navbar Links for Auth (4:17:27 / 11:50:32)
+Login with GitHub via Django AllAuth (4:35:31 / 11:50:32)
 https://youtu.be/WbNNESIxJnY?si=H7DymuiZsajjbDd6
 
 
 Better UI for Django AllAuth (4:17:27 / 11:50:32)
 Obs: a forma de modificar o template basico do AllAuth-UI mudou pois nas versoes mais novas o nome dos arquivos sao diferentes, e existe um app a mais como dependencia
+https://github.com/danihodovic/django-allauth-ui
