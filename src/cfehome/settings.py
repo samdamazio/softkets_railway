@@ -25,10 +25,18 @@ EMAIL_HOST_USER=config("EMAIL_HOST_USER", cast=str, default=None)
 EMAIL_HOST_PASSWORD=config("EMAIL_HOST_PASSWORD", cast=str, default=None)
 EMAIL_USE_TLS=config("EMAIL_USE_TLS", cast=bool, default=True) # Use EMAIL_PORT 587 for TLS
 EMAIL_USE_SSL=config("EMAIL_USE_SSL", cast=bool, default=False) # Use EMAIL_PORT 465 for SSL
+ADMIN_USER_NAME=config("ADMIN_USER_NAME", default="Admin user")
+ADMIN_USER_EMAIL=config("ADMIN_USER_EMAIL", default=None)
 
-# 500 errors
-ADMINS=[("Sam", "samuel_damazio@hotmail.com")]
-MANAGERS=ADMINS
+MANAGERS=[]
+ADMINS=[]
+if all([ADMIN_USER_NAME, ADMIN_USER_EMAIL]):
+    # 500 errors are emailed to these users
+    ADMINS +=[
+        (f'{ADMIN_USER_NAME}', f'{ADMIN_USER_EMAIL}')
+    ]
+    MANAGERS=ADMINS
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -65,11 +73,19 @@ INSTALLED_APPS = [
     # my-apps
     "commando",
     "visits",
+    # third-party-apps
+    # "allauth_ui",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+#     'allauth.socialaccount.providers.github',
+#     "widget_tweaks",
 ]
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
+    "allauth.account.middleware.AccountMiddleware", #allauth
     "whitenoise.middleware.WhiteNoiseMiddleware", #whitenoise
+    "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -109,7 +125,7 @@ DATABASES = {
     }
 }
 
-CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=30)
+CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=300)
 DATABASE_URL = config("DATABASE_URL", default=None)
 
 if DATABASE_URL is not None:
@@ -140,6 +156,28 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Django Allauth Config 
+LOGIN_REDIRECT_URL = "/"
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_VERIFICATION="mandatory"
+ACCOUNT_EMAIL_SUBJECT_PREFIX="[CFE] "
+ACCOUNT_EMAIL_REQUIRED=True
+
+AUTHENTICATION_BACKENDS = [
+    # ...
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+    # ...
+]
+
+SOCIALACCOUNT_PROVIDERS = {
+    "github": {
+        "VERIFIED_EMAIL": True
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
