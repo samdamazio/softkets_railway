@@ -1,4 +1,4 @@
-Login with GitHub via Django AllAuth (4:35:31 / 11:50:32)
+Password Protected Page with Django Sessions (4:35:31 / 11:50:32)
 https://youtu.be/WbNNESIxJnY?si=H7DymuiZsajjbDd6
 
 
