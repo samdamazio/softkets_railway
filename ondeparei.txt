@@ -1,4 +1,4 @@
-User Permissions in Django templates (5:20:33 / 11:50:32)
+Goups & Group-level Permissions (5:29:47 / 11:50:32)
 https://youtu.be/WbNNESIxJnY?si=H7DymuiZsajjbDd6
 
 
