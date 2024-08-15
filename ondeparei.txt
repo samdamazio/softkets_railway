@@ -1,4 +1,4 @@
-User Permissions and has_perm (5:09:47 / 11:50:32)
+User Permissions in Django templates (5:20:33 / 11:50:32)
 https://youtu.be/WbNNESIxJnY?si=H7DymuiZsajjbDd6
 
 
