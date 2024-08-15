@@ -1,4 +1,4 @@
-Password Protected Page with Django Sessions (4:35:31 / 11:50:32)
+User Profile View (5:01:23 / 11:50:32)
 https://youtu.be/WbNNESIxJnY?si=H7DymuiZsajjbDd6
 
 
